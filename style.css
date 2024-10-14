@@ -1324,6 +1324,9 @@ footer > div > div {
   font-weight: bold;
   color: #fff;
 }
+.slideColor img {
+  scale: 1.2;
+}
 
 .slideColor:nth-child(1n) {
   background-color: rgb(112, 14, 14);
