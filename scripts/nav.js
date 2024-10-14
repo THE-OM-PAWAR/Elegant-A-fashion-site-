@@ -2,6 +2,12 @@ const iso = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (!entry.isIntersecting) {
           console.log(entries)
+          gsap.to(".nav_mid", {
+            y: -15,
+            opacity: 0,
+            duration: 0.2,
+            scale: 1,
+          });
           gsap.to("._links", {
             y: -15,
             opacity: 0,
@@ -22,6 +28,12 @@ const iso = new IntersectionObserver((entries) => {
           });
         return;
       }
+      gsap.to(".nav_mid", {
+        y: 0,
+        opacity: 1,
+        duration: 0.2,
+        scale: 1,
+      });
       gsap.to("._links", {
         y: 0,
         opacity: 1,

@@ -2,21 +2,35 @@ var swiper = new Swiper(".mySwiper", {
   effect: "cards",
   grabCursor: true,
 });
-// var swiper2 = new Swiper(".mySwiper2", {
-//     slidesPerView: 3,
-//     spaceBetween: 30,
-//     freeMode: true,
-//     pagination: {
-//       el: ".swiper-pagination",
-//       clickable: true,
-//     },
-// });
+
 var swiper2 = new Swiper('.swiper2', {
   slidesPerView: 5,  // Show 3 slides at once
   spaceBetween: 20,  // Space between slides
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    1024: {
+      slidesPerView: 4,
+      spaceBetween: 20,
+    },
+    1324: {
+      slidesPerView: 5,
+      spaceBetween: 20,
+    },
   },
 });
 
@@ -50,10 +64,10 @@ function loading_animation() {
     scale: 0,
   });
   gsap.from(info_box, {
-    y: 10,
+    y: 20,
     opacity: 0,
     duration: 0.5,
-    stagger: 0.2,
+    stagger: 0.3,
     delay: 1,
     // scale:20
   });
@@ -281,3 +295,20 @@ function downloadPdf() {
 
 // Call the downloadPdf() function when needed, e.g., in response to a button click
 document.querySelector("#meun_link3 > span").addEventListener("click", downloadPdf);
+
+
+function mouseenter(element){
+  element.children[1].style.transform = "translateY(0rem) translateX(0rem)"
+  setTimeout(() => {
+    element.children[1].style.borderRadius = "0rem"
+    element.children[1].style.scale = "1"
+  }, 200);
+}
+function mouseleave(element){ 
+  element.children[1].style.transform = "translateY(6rem) translateX(6rem)"
+  setTimeout(() => {
+    element.children[1].style.borderRadius = "2rem"
+    element.children[1].style.scale = ".5"
+  }, 200);
+  
+}
