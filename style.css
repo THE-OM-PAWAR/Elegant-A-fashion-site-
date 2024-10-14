@@ -512,7 +512,7 @@ menu > ul {
   position: relative;
   display: flex;
   width: 100vw;
-  background: #5fb2e2;
+  background: #6bb7ca;
   min-height: 100vh;
 }
 
@@ -983,7 +983,7 @@ menu > ul {
   border-radius: 1.5rem;
   height: 96%;
   width: 95%;
-  background: #000;
+  background: #6bb7ca;
   display: flex;
   flex-direction: column;
   align-items: center;

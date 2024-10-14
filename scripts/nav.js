@@ -54,9 +54,43 @@ const iso = new IntersectionObserver((entries) => {
       });
     });
   }, {});
+  function section2Gsap(){
+    console.log(entries)
+    console.log("ompawar section2 ")
+
+  }
+
   iso.observe(document.getElementById("observer"));
-  
+  const iso2 = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        gsap.from(".main_heading_box", {
+          y: 0,
+          opacity: 0,
+          duration: .4,
+          scale: .7,
+          delay: 1,
+        });
+        gsap.from(".main_content_box", {
+          y: 0,
+        opacity: 0,
+        duration: .4,
+        scale: .7,
+        delay: 1,
+      });
+      gsap.from(".main_image_box", {
+        y: 0,
+        x: 0,
+        opacity: 0,
+        duration: .2,
+        scale: .7,
+        delay: 1,
+      });
+        return;
+      }
 
+    });
+  }, {})
 
-
+iso2.observe(document.getElementById("Section2Observer"));
 
